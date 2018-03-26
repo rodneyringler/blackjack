@@ -1,0 +1,45 @@
+<template>
+  <h1>${message}</h1>
+  <div>
+
+    <h1>Card Game</h1>
+
+      <table>
+        <tr>
+          <td>
+            Player's cards:  The total is  <input type="text" value.bind="pHand.total">
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td repeat.for="card of pHand.cards">
+            <img src.bind="card.imagefile" />
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            Dealer's cards:  The total is  <input type="text" value.bind="dHand.total">
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td repeat.for="card of dHand.cards">
+            <img src.bind="card.imagefile" />
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td><input type="submit" value="Deal" show.bind="ShowDeal" click.trigger="Deal()"></td>
+          <td><input type="submit" value="Hit Me" show.bind="ShowHit" click.trigger="Hit()"></td>
+          <td><input type="submit" value="Stand" show.bind="ShowStand" click.trigger="Stand()"></td>
+          <td><input type="submit" value="New Game" show.bind="ShowNewGame" click.trigger="NewGame()"></td>
+        </tr>
+      </table>
+  </div>
+</template>
+
